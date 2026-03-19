@@ -5,7 +5,7 @@
 
 BINDIR  ?= bin
 CC      ?= riscv-none-elf-gcc
-CFLAGS  ?= -std=c99
+CFLAGS  ?=
 
 EMBENCH_BUILD_DIR := $(abspath $(BINDIR))/embench-iot-build
 EMBENCH_CONFIG    := examples/riscv32/rv32emu
@@ -19,7 +19,7 @@ all:
 	    --config-dir=$(EMBENCH_CONFIG) \
 	    --build-dir=$(EMBENCH_BUILD_DIR) \
 	    cc=$(CC) \
-	    cflags="$(CFLAGS)" \
+	    cflags="$(CFLAGS) -std=c99" \
 	    user_libs=-lm
 	find $(EMBENCH_BUILD_DIR)/src -maxdepth 2 -type f ! -name '*.*' \
 	    -exec cp {} $(abspath $(BINDIR)) \;
