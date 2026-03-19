@@ -5,7 +5,7 @@
 
 BINDIR  ?= bin
 CC      ?= riscv-none-elf-gcc
-CFLAGS  ?= -march=rv32imac_zicsr -mabi=ilp32 -std=c99
+CFLAGS  ?= -std=c99
 
 EMBENCH_BUILD_DIR := $(abspath $(BINDIR))/embench-iot-build
 EMBENCH_CONFIG    := examples/riscv32/rv32emu
